@@ -21,8 +21,8 @@ end
 # ---------------------
 p1 = Pessoa.new 
 # setter
-p1.nome = 'Jackson'
-p1.email = 'jackson@jack.com'
+p1.nome = 'augusto'
+p1.email = 'augusto@jack.com'
 
 # getter
 puts p1.nome

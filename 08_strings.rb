@@ -1,4 +1,4 @@
-x = 'Jackson'
+x = 'Augusto'
 y = 'Rails'
 
 puts x
@@ -25,5 +25,5 @@ puts q
 puts q.object_id
 
 
-h = 'Jackson #{1+1} Pires #{q}'
+h = 'Augusto #{1+1} Silva #{q}'
 puts h

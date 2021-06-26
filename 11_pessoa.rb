@@ -20,7 +20,7 @@ end
 
 p1 = Pessoa.new
 puts p1.falar('Olá, fulano de tal!')
-puts p1.falar2('Jackson')
+puts p1.falar2('augusto')
 puts p1.falar3('Oie!', 'Yes!')
 
 p2 = Pessoa.new(5)
