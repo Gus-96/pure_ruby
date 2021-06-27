@@ -2,10 +2,9 @@
 # .chomp é um método que remove o código de formatação \n do elemento que foi aplicado.
 # gets pegar uma string do teclado (get -> sTRING)
 # .inspect especiona a variavel que foi aplicado
-# Código abaixo realiza um input de uma string e output da mesma.  
+# Código abaixo realiza um input de uma string.  
 print 'Digite seu nome: '
 nome = gets.chomp
-puts 'Seja bem-vindo ' + nome + '!'
 # .to_x transformar o tipo da dado da váriavel, a ação é chamda de 'Coerção/ Cast / Casting'
 # .round(2) modifca o float para 2 casas decimais
 # Codigo abaixo realiza um imput de uma string transforma em float calcula o aumento de 10%
