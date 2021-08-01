@@ -1,3 +1,4 @@
+#Lista de Cliente
 clientes = []
 
 #Menu de Opções
@@ -130,7 +131,6 @@ loop do
 
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
-
         arr = clientes.select{|i| i[:cpf] == cpf}
         hash = Hash[*arr]
 
@@ -139,26 +139,27 @@ loop do
             puts "Seu saldo é de R$ #{hash[:saldo]}"
             print "Digite o CPF vinculado a conta que deseja transferir: "
             cpf_transferencia = gets.chomp.to_s
-            arr_transferencia = clientes.select{|i| i[:cpf] == cpf_transferencia}
-            hash_transferencia = Hash[*arr_transferencia]
-
-            print "Digite o valor da transferencia: "
-            valor_transferencia = gets.chomp.to_i
-
-            if valor_transferencia > hash[:saldo]
-                puts "Valor informado excede saldo em conta."
-            else
-                hash[:saldo] =  hash[:saldo] - valor_transferencia
-                clientes.delete_if { |h| h[:cpf] == cpf }
-                clientes.push(hash)
-                hash_transferencia[:saldo] = hash_transferencia[:saldo] + valor_transferencia
-                clientes.delete_if { |h| h[:cpf] == cpf_transferencia }
-                clientes.push(hash_transferencia)
-            puts "Tranferencia Realizada com sucesso!" 
-            puts "Seu saldo é de R$ #{hash[:saldo]}"
+            if arr_transferencia = clientes.select{|i| i[:cpf] == cpf_transferencia}
+                hash_transferencia = Hash[*arr_transferencia]
+                print "Digite o valor da transferencia: "
+                valor_transferencia = gets.chomp.to_i
+                if valor_transferencia > hash[:saldo]
+                    puts "Valor informado excede saldo em conta."
+                else
+                    hash[:saldo] =  hash[:saldo] - valor_transferencia
+                    clientes.delete_if { |h| h[:cpf] == cpf }
+                    clientes.push(hash)
+                    hash_transferencia[:saldo] = hash_transferencia[:saldo] + valor_transferencia
+                    clientes.delete_if { |h| h[:cpf] == cpf_transferencia }
+                    clientes.push(hash_transferencia)
+                    puts "Tranferencia Realizada com sucesso!" 
+                    puts "Seu saldo é de R$ #{hash[:saldo]}"
+                end
+            else 
+                puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
             end
-        else 
-            puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
+        else
+            puts "CPF de destino invalido. Por favor, tente novamente."   
         end
         puts "\n"
 
