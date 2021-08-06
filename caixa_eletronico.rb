@@ -54,7 +54,6 @@ loop do
         cpf = gets.chomp.to_s
         print "Digite sua senha: "
         senha = gets.chomp.to_s
-
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
         arr = clientes.select{|i| i[:cpf] == cpf}
@@ -68,11 +67,11 @@ loop do
         puts "\n"
   
     when 4
+        # Realiza Deposito
         print "Digite o CPF vinculado a conta: "
         cpf = gets.chomp.to_s
         print "Digite sua senha: "
         senha = gets.chomp.to_s
-
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
         arr = clientes.select{|i| i[:cpf] == cpf}
@@ -98,7 +97,6 @@ loop do
         cpf = gets.chomp.to_s
         print "Digite sua senha: "
         senha = gets.chomp.to_s
-        
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
         arr = clientes.select{|i| i[:cpf] == cpf}
@@ -108,7 +106,6 @@ loop do
             puts "Seu saldo é de R$ #{hash[:saldo]}"
             print "Digite o valor do saque: "
             saque = gets.chomp.to_i
-
             if saque > hash[:saldo]
                 puts "Valor solcitado excede saldo em conta."
             else
@@ -126,20 +123,26 @@ loop do
     when 6
         print "Digite o CPF vinculado a conta: "
         cpf = gets.chomp.to_s
+
         print "Digite sua senha: "
         senha = gets.chomp.to_s
+
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
+
         arr = clientes.select{|i| i[:cpf] == cpf}
         hash = Hash[*arr]
+
         if hash[:cpf] == cpf && hash[:senha] == senha
             puts "Usuário Autenticado com Sucesso !"
             print "Digite o CPF vinculado a conta que deseja transferir: "
             cpf_transferencia = gets.chomp.to_s
+
             if arr_transferencia = clientes.select{|i| i[:cpf] == cpf_transferencia}
                 hash_transferencia = Hash[*arr_transferencia]
                 print "Digite o valor da transferencia: "
                 valor_transferencia = gets.chomp.to_i
+                
                 if valor_transferencia > hash[:saldo]
                     puts "Valor informado excede saldo em conta."
                 else
@@ -166,14 +169,13 @@ loop do
         cpf = gets.chomp.to_s
         print "Digite sua senha: "
         senha = gets.chomp.to_s
-        
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
         arr = clientes.select{|i| i[:cpf] == cpf}
         hash = Hash[*arr]
         if hash[:cpf] == cpf && hash[:senha] == senha
-            puts "Conta encerrada com sucesso!"
             clientes.delete_if { |h| h[:cpf] == cpf }
+            puts "Conta encerrada com sucesso!"
         else 
             puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
         end
@@ -187,7 +189,6 @@ loop do
         puts "\n"
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"    
         puts "\n"                                                    
-
-    break
+        break
     end
 end
