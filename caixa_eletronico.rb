@@ -167,18 +167,23 @@ loop do
         #Exclui Conta
         print "Digite o CPF vinculado a conta: "
         cpf = gets.chomp.to_s
+
         print "Digite sua senha: "
         senha = gets.chomp.to_s
+
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
+        
         arr = clientes.select{|i| i[:cpf] == cpf}
         hash = Hash[*arr]
+
         if hash[:cpf] == cpf && hash[:senha] == senha
             clientes.delete_if { |h| h[:cpf] == cpf }
             puts "Conta encerrada com sucesso!"
         else 
             puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
         end
+       
         puts "\n"
                 
     when 8
