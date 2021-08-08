@@ -72,10 +72,13 @@ loop do
         cpf = gets.chomp.to_s
         print "Digite sua senha: "
         senha = gets.chomp.to_s
+        
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
+        
         arr = clientes.select{|i| i[:cpf] == cpf}
         hash = Hash[*arr]
+        
         if hash[:cpf] == cpf && hash[:senha] == senha
             puts "Usuário Autenticado com Sucesso !"
             puts "Seu saldo é de R$ #{hash[:saldo]}"
@@ -95,17 +98,22 @@ loop do
         # Realiza Saque         
         print "Digite o CPF vinculado a conta: "
         cpf = gets.chomp.to_s
+        
         print "Digite sua senha: "
         senha = gets.chomp.to_s
+        
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
+        
         arr = clientes.select{|i| i[:cpf] == cpf}
         hash = Hash[*arr]
+
         if hash[:cpf] == cpf && hash[:senha] == senha
             puts "Usuário Autenticado com Sucesso !"
             puts "Seu saldo é de R$ #{hash[:saldo]}"
             print "Digite o valor do saque: "
             saque = gets.chomp.to_i
+            
             if saque > hash[:saldo]
                 puts "Valor solcitado excede saldo em conta."
             else
@@ -115,6 +123,7 @@ loop do
                 puts "Saque Realizado com sucesso!" 
                 puts "Seu saldo é de R$ #{hash[:saldo]}"
             end
+
         else 
             puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
         end 
