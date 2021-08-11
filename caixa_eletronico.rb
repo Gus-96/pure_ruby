@@ -24,11 +24,13 @@ loop do
         # Verificar se existe alguma conta e lista todas
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"                                                        
         puts "\n"
+        
         if clientes.any? == false
             puts "Nenhuma Conta Cadastrada!"
         else
             puts clientes
         end
+        
         puts "\n"  
         
     when 2
