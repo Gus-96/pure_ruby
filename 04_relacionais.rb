@@ -1,5 +1,6 @@
-# Relacionais
+# Operadores relacionais
 # >, >=, <, <=, ==, !=
+
 # Aritméticos
 # +, -, *, /, **, %
 if 1 != 2

@@ -1,9 +1,11 @@
-# Codigo abaixo verifica o sexo escolhido atraves de comparações
+# Condicionais
+# Verificar uma condição e alterar o fluxo de execução do algoritmo.
+# Codigo abaixo verifica o genero escolhido atraves de comparações
 # || simpoliza o 'or'
 # && simboliza o 'e'
 print 'Digite seu gênero: '
-sexo = gets.chomp
-if sexo == 'feminino' || sexo == 'Feminino' || sexo == 'FEMININO' || sexo == 'f' || sexo == 'F'
+genero = gets.chomp
+if genero == 'feminino' || genero == 'Feminino' || genero == 'FEMININO' || genero == 'f' || genero == 'F'
    puts 'O gênero "Feminino" foi registrado com sucesso!'
    else
       puts 'O gênero "Masculino" foi salvo com sucesso!'
@@ -11,8 +13,7 @@ end
 # Estruturas Condicional Ternária
 # <condição> ? <verdadeiro> : <falso>
 # Solução alternativa em 1 linha
-#(sexo == 'm' || sexo == 'M') ? (puts 'Masculino') : (puts 'Feminino')
-
+#(genero == 'm' || genero == 'M') ? (puts 'Masculino') : (puts 'Feminino')
 
 # Verificar a faixa etária da idade informada
 print 'Digite sua idade: '
